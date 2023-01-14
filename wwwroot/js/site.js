@@ -27,9 +27,10 @@
 				});
 			})();
 
-		
+		    //Loading Solidity based editor
 			loadSample(MODES[75]);
 
+			//Loading file comparision file lhs and rhs
 			loadDiffSample();
 
 			diffEditor.updateOptions({
