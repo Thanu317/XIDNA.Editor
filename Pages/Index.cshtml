@@ -1,0 +1,39 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+<div class="container">
+		<div class="editor row">
+			<h1>XIDNA Cod Editor</h1>
+			<div class="span9">
+				<div class="editor-frame">
+					<div class="loading editor">
+						<div class="progress progress-striped active">
+							<div class="bar"></div>
+						</div>
+					</div>
+					<div id="editor"></div>
+				</div>
+			</div>
+		</div>
+</div>
+<hr />
+<div class="container" style="margin-top:100px;">
+	<div class="diff-editor row">
+			  <h1>Diffentiate XIDNA Editor</h1>
+
+			<div class="span9">
+			<div class="diff-editor-frame">
+				<div class="loading diff-editor">
+					<div class="progress progress-striped active">
+							<div class="bar"></div>
+						</div>
+					</div>
+				 <div id="diff-editor"></div>
+				</div>
+			</div>
+		</div>
+</div>
