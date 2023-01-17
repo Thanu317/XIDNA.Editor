@@ -22,17 +22,17 @@ body {
 }
 
 .editor {
-    height: calc(100vh - 100px);
+    height: calc(50vh - 50px);
 }
 
 #editor {
-    height: calc(100vh - 100px);
+    height: calc(50vh - 50px);
 }
 
 .diff-editor {
-    height: calc(100vh - 100px);
+    height: calc(50vh - 50px);
 }
 
 #diff-editor {
-    height: calc(100vh - 100px);
+    height: calc(50vh - 50px);
 }
