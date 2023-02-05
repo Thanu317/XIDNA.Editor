@@ -30,12 +30,15 @@
 		    //Loading Solidity based editor
 			loadSample(MODES[75]);
 
-			//Loading file comparision file lhs and rhs
-			loadDiffSample();
+			
+			
 
-			diffEditor.updateOptions({
-				renderSideBySide: false
-			});
+			//Loading file comparision file lhs and rhs
+			//loadDiffSample();
+
+			//diffEditor.updateOptions({
+			//	renderSideBySide: false,
+			//});
 		});
 
 		window.onresize = function () {
@@ -55,6 +58,72 @@
 			dataType: 'text',
 			beforeSend: function () {
 				$('.loading.editor').show();
+
+
+				
+				editor = monaco.editor.create(document.getElementById('editor'), {
+					glyphMargin: true,
+				   //contextmenu: false
+				});
+
+				//Add Custom Lable/Actions
+
+				editor.addAction({
+					// An unique identifier of the contributed action.
+					id: 'my-unique-id',
+
+					// A label of the action that will be presented to the user.
+					label: 'Capture Line Number',
+
+					// An optional array of keybindings for the action.
+					keybindings: [
+						monaco.KeyMod.CtrlCmd | monaco.KeyCode.F10,
+						// chord
+						monaco.KeyMod.chord(
+							monaco.KeyMod.CtrlCmd | monaco.KeyCode.KeyK,
+							monaco.KeyMod.CtrlCmd | monaco.KeyCode.KeyM
+						)
+					],
+
+					// A precondition for this action.
+					precondition: null,
+
+					// A rule to evaluate on top of the precondition in order to dispatch the keybindings.
+					keybindingContext: null,
+
+					contextMenuGroupId: 'navigation',
+
+					contextMenuOrder: 1.5,
+
+					// Method that will be executed when the action is triggered.
+					// @param editor The editor instance is passed in as a convenience
+					run: function (ed) {
+						alert("i'm running => " + ed.getPosition());
+					}
+				});
+
+
+
+				// Mouse events
+				editor.onMouseMove(function (e) {
+					console.log('mousemove - ' + e.target.toString());
+				});
+				editor.onMouseDown(function (e) {
+					console.log('mousedown - ' + e.target.toString());
+				});
+				editor.onContextMenu(function (e) {
+					console.log('contextmenu - ' + e.target.toString());
+				});
+				editor.onMouseLeave(function (e) {
+					console.log('mouseleave');
+				});
+
+
+
+				// add key event
+				editor.addCommand(monaco.KeyCode.F9, function () {
+					alert('F9 pressed!');
+				});
 			},
 			error: function () {
 				if (editor) {

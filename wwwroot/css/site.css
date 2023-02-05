@@ -22,11 +22,11 @@ body {
 }
 
 .editor {
-    height: calc(50vh - 50px);
+    height: calc(100vh - 100px);
 }
 
 #editor {
-    height: calc(50vh - 50px);
+    height: calc(100vh - 100px);
 }
 
 .diff-editor {
