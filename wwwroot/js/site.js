@@ -111,7 +111,7 @@
 
 				//Type: ./src/types/index.ts#ReviewComment
 				var existingComments = [{
-					author: '',
+					author: 'donkala Rajasekhar',
 					dt: '',
 					text: 'helloo this is the over',
 					lineNumber: 10
@@ -120,28 +120,31 @@
 				var rm = MonacoEditorCodeReview.createReviewManager(editor,
 					"Rajasekhar Donkala",
 					existingComments,
-					(newComments) => { console.info(newComments); },
+					(newComments) => {
+						console.log("loading comments")
+						console.info(newComments);
+					},
 					overriddenConfig);
 
 
 
 				// Mouse events
-				editor.onMouseMove(function (e) {
-					console.log('mousemove - ' + e.target.toString());
-					console.log(e.target);
-				});
-				editor.onMouseDown(function (e) {
-					console.log('mousedown - ' + e.target.toString());
-					console.log(e.target);
-				});
-				editor.onContextMenu(function (e) {
-					console.log('contextmenu - ' + e.target.toString());
-					console.log(e.target);
-				});
-				editor.onMouseLeave(function (e) {
-					console.log('mouseleave');
-					console.log(e.target);
-				});
+				//editor.onMouseMove(function (e) {
+				//	console.log('mousemove - ' + e.target.toString());
+				//	console.log(e.target);
+				//});
+				//editor.onMouseDown(function (e) {
+				//	console.log('mousedown - ' + e.target.toString());
+				//	console.log(e.target);
+				//});
+				//editor.onContextMenu(function (e) {
+				//	console.log('contextmenu - ' + e.target.toString());
+				//	console.log(e.target);
+				//});
+				//editor.onMouseLeave(function (e) {
+				//	console.log('mouseleave');
+				//	console.log(e.target);
+				//});
 
 
 
