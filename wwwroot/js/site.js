@@ -8,7 +8,9 @@
 
 	var editor = null, diffEditor = null;
 
+
 	$(document).ready(function () {
+
 
 		require(['vs/editor/editor.main'], function () {
 			var MODES = (function () {
@@ -54,7 +56,7 @@
 	function loadSample(mode) {
 		$.ajax({
 			type: 'GET',
-			url: mode.sampleURL,
+			url: 'https://raw.githubusercontent.com/smartcontractkit/chainlink/develop/contracts/src/v0.5/Median.sol',
 			dataType: 'text',
 			beforeSend: function () {
 				$('.loading.editor').show();
@@ -101,6 +103,25 @@
 						alert("i'm running => " + ed.getPosition());
 					}
 				});
+
+
+
+
+				var overriddenConfig = {};
+
+				//Type: ./src/types/index.ts#ReviewComment
+				var existingComments = [{
+					author: '',
+					dt: '',
+					text: 'helloo this is the over',
+					lineNumber: 10
+				}];
+
+				var rm = MonacoEditorCodeReview.createReviewManager(editor,
+					"Rajasekhar Donkala",
+					existingComments,
+					(newComments) => { console.info(newComments); },
+					overriddenConfig);
 
 
 
