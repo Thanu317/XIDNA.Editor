@@ -65,7 +65,10 @@
 				
 				editor = monaco.editor.create(document.getElementById('editor'), {
 					glyphMargin: true,
-				   //contextmenu: false
+				    contextmenu: false,
+					glyphMargin: true,
+					contextmenu: true,
+					automaticLayout: true,
 				});
 
 				//Add Custom Lable/Actions
