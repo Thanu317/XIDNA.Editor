@@ -22,17 +22,42 @@ body {
 }
 
 .editor {
-    height: calc(100vh - 100px);
+    flex: auto;
+    overflow: hidden;
+    margin: 5px;
+    height: 400px;
 }
 
 #editor {
-    height: calc(100vh - 100px);
+    flex: auto;
+    overflow: hidden;
+    margin: 5px;
+    height: 400px;
 }
 
 .diff-editor {
-    height: calc(50vh - 50px);
+    flex: auto;
+    overflow: hidden;
+    margin: 5px;
+    height: 400px;
 }
 
 #diff-editor {
-    height: calc(50vh - 50px);
+    flex: auto;
+    overflow: hidden;
+    margin: 5px;
+    height: 400px;
+}
+.comment_text {
+    background-color: #222222;
+    color: white;
+}
+.summary {
+    height: auto;
+    max-height: 300px;
+    min-height: 300px;
+    padding: 10px;
+    overflow: auto;
+    display: flex;
+    flex-direction: row;
 }
