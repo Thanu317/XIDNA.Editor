@@ -46,7 +46,7 @@ body {
     flex: auto;
     overflow: hidden;
     margin: 5px;
-    height: 400px;
+    height: 1000px;
 }
 .comment_text {
     background-color: #222222;

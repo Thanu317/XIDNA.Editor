@@ -56,7 +56,7 @@
 	function loadSample(mode) {
 		$.ajax({
 			type: 'GET',
-			url: 'https://raw.githubusercontent.com/smartcontractkit/chainlink/develop/contracts/src/v0.5/Median.sol',
+			url: 'https://raw.githubusercontent.com/Thanu317/solidity_smart_contracts/main/contracts/NFT/NFT.sol',
 			dataType: 'text',
 			beforeSend: function () {
 				$('.loading.editor').show();
