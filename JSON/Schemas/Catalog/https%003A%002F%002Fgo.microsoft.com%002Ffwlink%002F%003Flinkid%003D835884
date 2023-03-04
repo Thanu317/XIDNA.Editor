@@ -165,6 +165,12 @@
       ]
     },
     {
+      "name": "Ansible Rulebook",
+      "description": "Ansible rulebook files",
+      "url": "https://raw.githubusercontent.com/ansible/ansible-rulebook/main/ansible_rulebook/schema/ruleset_schema.json",
+      "fileMatch": ["**/rulebooks/*.yml", "**/rulebooks/*.yaml"]
+    },
+    {
       "name": "Ansible Inventory",
       "description": "Ansible inventory files",
       "url": "https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/inventory.json",
@@ -4589,9 +4595,10 @@
       "name": "Pantsbuild",
       "description": "Pantsbuild configuration file",
       "fileMatch": ["pants*.toml"],
-      "url": "https://json.schemastore.org/pantsbuild-2.14.0.json",
+      "url": "https://json.schemastore.org/pantsbuild-2.15.0.json",
       "versions": {
-        "2.14.0": "https://json.schemastore.org/pantsbuild-2.14.0.json"
+        "2.14.0": "https://json.schemastore.org/pantsbuild-2.14.0.json",
+        "2.15.0": "https://json.schemastore.org/pantsbuild-2.15.0.json"
       }
     },
     {

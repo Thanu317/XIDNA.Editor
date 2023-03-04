@@ -108,26 +108,60 @@
 				});
 
 
+				editor.addAction({
+					// An unique identifier of the contributed action.
+					id: 'add-comment-id',
 
+					// A label of the action that will be presented to the user.
+					label: 'Add New Comment',
 
-				var overriddenConfig = {};
+					// An optional array of keybindings for the action.
+					keybindings: [
+						monaco.KeyMod.CtrlCmd | monaco.KeyCode.F2,
+						// chord
+						monaco.KeyMod.chord(
+							monaco.KeyMod.CtrlCmd | monaco.KeyCode.KeyK,
+							monaco.KeyMod.CtrlCmd | monaco.KeyCode.KeyM
+						)
+					],
 
-				//Type: ./src/types/index.ts#ReviewComment
-				var existingComments = [{
-					author: 'donkala Rajasekhar',
-					dt: '',
-					text: 'helloo this is the over',
-					lineNumber: 10
-				}];
+					// A precondition for this action.
+					precondition: null,
 
-				var rm = MonacoEditorCodeReview.createReviewManager(editor,
-					"Rajasekhar Donkala",
-					existingComments,
-					(newComments) => {
-						console.log("loading comments")
-						console.info(newComments);
-					},
-					overriddenConfig);
+					// A rule to evaluate on top of the precondition in order to dispatch the keybindings.
+					keybindingContext: null,
+
+					contextMenuGroupId: 'navigation',
+
+					contextMenuOrder: 1.6,
+
+					// Method that will be executed when the action is triggered.
+					// @param editor The editor instance is passed in as a convenience
+					run: function (ed) {
+						console.log(ed);
+						//alert("i'm running => " + ed.getPosition());
+						$("#myModal").modal('show');
+					}
+				});
+
+				//var overriddenConfig = {};
+
+				////Type: ./src/types/index.ts#ReviewComment
+				//var existingComments = [{
+				//	author: ''
+				//	dt: 'fsfdsfds fsdf',
+				//	text: 'helloo this is the over',
+				//	lineNumber: 10
+				//}];
+
+				//var rm = MonacoEditorCodeReview.createReviewManager(editor,
+				//	"Raja",
+				//	existingComments,
+				//	(newComments) => {
+				//		console.log("loading comments")
+				//		console.info(newComments);
+				//	},
+				//	null);
 
 
 
@@ -185,6 +219,10 @@
 			$('.loading.editor').fadeOut({ duration: 300 });
 		});
 	}
+
+	$("#closeModalBtn").click(function () {
+		$("#myModal").modal('hide');
+	});
 
 	function loadDiffSample() {
 
