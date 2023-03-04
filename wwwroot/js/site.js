@@ -165,23 +165,23 @@
 
 
 
-				// Mouse events
-				//editor.onMouseMove(function (e) {
-				//	console.log('mousemove - ' + e.target.toString());
-				//	console.log(e.target);
-				//});
-				//editor.onMouseDown(function (e) {
-				//	console.log('mousedown - ' + e.target.toString());
-				//	console.log(e.target);
-				//});
-				//editor.onContextMenu(function (e) {
-				//	console.log('contextmenu - ' + e.target.toString());
-				//	console.log(e.target);
-				//});
-				//editor.onMouseLeave(function (e) {
-				//	console.log('mouseleave');
-				//	console.log(e.target);
-				//});
+			//Mouse events
+				editor.onMouseMove(function (e) {
+					console.log('mousemove - ' + e.target.toString());
+					console.log(e.target);
+				});
+				editor.onMouseDown(function (e) {
+					console.log('mousedown - ' + e.target.toString());
+					console.log(e.target);
+				});
+				editor.onContextMenu(function (e) {
+					console.log('contextmenu - ' + e.target.toString());
+					console.log(e.target);
+				});
+				editor.onMouseLeave(function (e) {
+					console.log('mouseleave');
+					console.log(e.target);
+				});
 
 
 
