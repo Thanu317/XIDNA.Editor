@@ -1,5 +1,6 @@
 Demo Manual Entry
 MIT Licenses
+3rd line inserted
 added the some data
 Copyright (c) [year] [fullname]
 
