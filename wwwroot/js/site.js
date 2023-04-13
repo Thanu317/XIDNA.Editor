@@ -61,8 +61,6 @@
 			beforeSend: function () {
 				$('.loading.editor').show();
 
-
-				
 				editor = monaco.editor.create(document.getElementById('editor'), {
 					glyphMargin: true,
 				    contextmenu: false,
@@ -70,6 +68,29 @@
 					contextmenu: true,
 					automaticLayout: true,
 				});
+
+
+				monaco.languages.registerHoverProvider("sol", {
+					provideHover: function (model, position) {
+						return {
+							range: new monaco.Range(
+								1,
+								1,
+								model.getLineCount(),
+								model.getLineMaxColumn(model.getLineCount())
+							),
+							contents: [
+								{ value: "XIDNA Modal" },
+								{
+									value: "```html\n" +
+										 "sadsafkdskfjkdsfdsfdsds" +
+										"\n```",
+								},
+							],
+						};
+					},
+				});
+
 
 				//Add Custom Lable/Actions
 
@@ -169,9 +190,9 @@
 				editor.onMouseMove(function (e) {
 					//console.log('mousemove - ' + e.target.toString());
 					
-					if (e.target.position?.lineNumber) {
-						console.log(e.target.position.lineNumber);
-					}
+					//if (e.target.position?.lineNumber) {
+					//	console.log(e.target.position.lineNumber);
+					//}
 
 
 				});
