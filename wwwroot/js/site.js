@@ -56,7 +56,7 @@
 	function loadSample(mode) {
 		$.ajax({
 			type: 'GET',
-			url: 'https://raw.githubusercontent.com/Thanu317/solidity_smart_contracts/main/contracts/NFT/NFT.sol',
+			url: 'https://raw.githubusercontent.com/Thanu317/erc_demo/master/contracts/dummy.sol',
 			dataType: 'text',
 			beforeSend: function () {
 				$('.loading.editor').show();
@@ -167,23 +167,44 @@
 
 			//Mouse events
 				editor.onMouseMove(function (e) {
-					console.log('mousemove - ' + e.target.toString());
-					console.log(e.target);
+					//console.log('mousemove - ' + e.target.toString());
+					
+					if (e.target.position?.lineNumber) {
+						console.log(e.target.position.lineNumber);
+					}
+
+
 				});
-				editor.onMouseDown(function (e) {
-					console.log('mousedown - ' + e.target.toString());
-					console.log(e.target);
-				});
+				//editor.onMouseDown(function (e) {
+				//	console.log('mousedown - ' + e.target.toString());
+				//	console.log(e.target);
+				//});
 				editor.onContextMenu(function (e) {
 					console.log('contextmenu - ' + e.target.toString());
-					console.log(e.target);
+				
 				});
-				editor.onMouseLeave(function (e) {
-					console.log('mouseleave');
-					console.log(e.target);
-				});
+				//editor.onMouseLeave(function (e) {
+				//	console.log('mouseleave');
+				//	console.log(e.target);
+				//});
 
 
+
+				//// Create a new decoration for line 2
+				//const decoration = {
+				//	range: new monaco.Range(2, 1, 2, 20),
+				//	options: {
+				//		isWholeLine: false,
+				//		glyphMarginClassName: "commentGlyphMargin",
+				//		inlineClassName: "commentInline",
+				//		hoverMessage: { value: "This is a comment" }
+				//	}
+				//};
+
+				//const decorationId = editor.deltaDecorations([], [decoration]);
+
+				//console.log(decorationId);
+			
 
 				// add key event
 				editor.addCommand(monaco.KeyCode.F9, function () {
